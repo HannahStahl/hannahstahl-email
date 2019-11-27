@@ -1,5 +1,11 @@
 service: websitesbyhannah-email
 
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  domain:
+    dev: http://localhost:3000
+    prod: https://www.websitesbyhannah.com
+
 provider:
   name: aws
   runtime: nodejs10.x
@@ -7,7 +13,7 @@ provider:
   region: us-east-1
   environment:
     email: hannahstahl14@gmail.com
-    domain: http://localhost:3000
+    domain: ${self:custom.domain.${self:custom.stage}}
   iamRoleStatements:
     - Effect: "Allow"
       Action:

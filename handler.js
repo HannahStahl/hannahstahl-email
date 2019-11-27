@@ -45,7 +45,7 @@ function generateEmailParams (body) {
       },
       Subject: {
         Charset: 'UTF-8',
-        Data: 'New message from www.websitesbyhannah.com'
+        Data: 'New message from Websites By Hannah'
       }
     }
   }
